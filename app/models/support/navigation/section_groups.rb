@@ -68,7 +68,8 @@ module Support
 
       def other_requests
         sections_for(Support::Requests::AnalyticsRequest,
-                     Support::Requests::GeneralRequest)
+                     Support::Requests::GeneralRequest,
+                     Support::Requests::FindCoronavirusSupportRequest)
       end
     end
   end

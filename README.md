@@ -15,7 +15,7 @@ to the `support` app.
 ## Technical documentation
 
 This is a Ruby on Rails application which collects feedback and creates tickets based on it.
-It collects data from two sources: 
+It collects data from two sources:
 - its own forms which can be accessed by [signon](https://github.com/alphagov/signon) users
 - contact forms from the [feedback app](https://github.com/alphagov/feedback)
 
@@ -45,6 +45,7 @@ The types of forms and their purpose are listed below:
 - "General": Report a problem, request GDS support, or make a suggestion
 - "Feedback explorer": GOV.UK Anonymous Feedback
 - "Emergency contact details": Contact GOV.UK in an emergency
+- "Request Changes to Coronavirus Find Support Form": Give feedback or make requests for changes to the Coronavirus Find Support Form
 
 #### Feedback explorer
 

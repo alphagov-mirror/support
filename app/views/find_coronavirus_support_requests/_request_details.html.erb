@@ -1,0 +1,13 @@
+<div class="alert alert-info">
+  <p>Please use this path to request changes to the /find-coronavirus-support form</p>
+</div>
+
+<%= f.inputs "Details of your requested changes" do %>
+  <%= f.input :placeholder_one, as: :text, label: "Details", required: true, input_html: { class: "input-md-6", rows: 6, cols: 50, :"aria-required" => true } %>
+
+  <%= f.input :placeholder_two, label: "More details", input_html: { class: "input-md-6" } %>
+<% end %>
+
+<%= render partial: "support/attachment_instructions" %>
+
+<%= render partial: "support/collaborators", locals: { f: f } %>
