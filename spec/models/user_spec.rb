@@ -18,7 +18,7 @@ describe User, type: :model do
     user = User.upsert!("uid" => "12345", "name" => "A", "email" => "a@b.com")
     expect(user).to_not be_remotely_signed_out
 
-    user.update_attribute(:remotely_signed_out, true)
+    user.update_attribute(:remotely_signed_out, true) # rubocop:disable Rails/SkipsModelValidations
     expect(user).to be_remotely_signed_out
 
     expect(User.where(uid: "12345", remotely_signed_out: false)).to be_empty
@@ -26,10 +26,7 @@ describe User, type: :model do
 
   it "supports mass updating of attributes" do
     user = User.upsert!("uid" => "12345", "name" => "A", "email" => "a@b.com")
-
-    # rubocop:disable Rails/ActiveRecordAliases
-    user.update_attributes({ "uid" => "12345", "name" => "Z", "email" => "x@y.com" }, as: :somebody)
-    # rubocop:enable Rails/ActiveRecordAliases
+    user.update_attributes({ "uid" => "12345", "name" => "Z", "email" => "x@y.com" }, as: :somebody) # rubocop:disable Rails/ActiveRecordAliases
 
     expect(user.name).to eq("Z")
     expect(user.email).to eq("x@y.com")
